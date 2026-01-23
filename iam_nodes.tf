@@ -26,3 +26,9 @@ resource "aws_iam_role_policy_attachment" "cloudwatch" {
     role       = aws_iam_role.eks_cluster_role.name
 
 }
+
+resource "aws_iam_instance_profile" "nodes" {
+    name = format(var.project_name)
+    role = aws_iam_role.eks_node_role.name
+
+}
