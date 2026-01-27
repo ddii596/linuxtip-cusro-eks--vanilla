@@ -19,3 +19,5 @@ SSM_PUBLIC_SUBNETS = [
   "/linuxtips-vpc/subnets/public/us-east-1b/linuxtips-public-1b",
   "/linuxtips-vpc/subnets/public/us-east-1c/linuxtips-public-1c",
 ]
+
+eks_version = "1.33"

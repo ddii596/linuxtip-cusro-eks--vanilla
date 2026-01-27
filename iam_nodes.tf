@@ -22,13 +22,13 @@ resource "aws_iam_role_policy_attachment" "ssm" {
 }
 
 resource "aws_iam_role_policy_attachment" "cloudwatch" {
-    policy_arn = "arn:aws:iam::aws:policy/AmazonCloudWatchAgentServerPolicy"
+    policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
     role       = aws_iam_role.eks_cluster_role.name
 
 }
 
 resource "aws_iam_instance_profile" "nodes" {
     name = format(var.project_name)
-    role = aws_iam_role.eks_node_role.name
+    role = aws_iam_role.eks_cluster_role.name
 
 }
