@@ -6,7 +6,7 @@ resource "kubernetes_config_map" "aws_auth" {
 
   data = {
     mapRoles = <<YAML
-- rolearn: ${data.aws_iam_role.current.arn}
+- rolearn: ${aws_iam_role.eks_cluster_role.arn}
   username: system:node:{{EC2PrivateDNSName}}
   groups:
     - system:bootstrappers
@@ -16,3 +16,4 @@ YAML
   }
   depends_on = [ aws_eks_cluster.main ]
 }
+
