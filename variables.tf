@@ -26,7 +26,7 @@ variable "SSM_PUBLIC_SUBNETS" {
 
 variable "eks_version" {
   type = string
-  
+
 }
 
 variable "SSM_PODS_SUBNETS" {
